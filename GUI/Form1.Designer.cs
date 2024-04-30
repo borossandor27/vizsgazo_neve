@@ -49,12 +49,13 @@ namespace GUI
             // 
             this.listBox_dolgozok.Dock = System.Windows.Forms.DockStyle.Left;
             this.listBox_dolgozok.FormattingEnabled = true;
-            this.listBox_dolgozok.ItemHeight = 24;
+            this.listBox_dolgozok.ItemHeight = 29;
             this.listBox_dolgozok.Location = new System.Drawing.Point(0, 0);
-            this.listBox_dolgozok.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.listBox_dolgozok.Margin = new System.Windows.Forms.Padding(6);
             this.listBox_dolgozok.Name = "listBox_dolgozok";
-            this.listBox_dolgozok.Size = new System.Drawing.Size(301, 586);
+            this.listBox_dolgozok.Size = new System.Drawing.Size(1436, 586);
             this.listBox_dolgozok.TabIndex = 0;
+            this.listBox_dolgozok.SelectedIndexChanged += new System.EventHandler(this.listBox_dolgozok_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -62,7 +63,7 @@ namespace GUI
             this.label1.Location = new System.Drawing.Point(338, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 24);
+            this.label1.Size = new System.Drawing.Size(62, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Név:";
             // 
@@ -71,7 +72,7 @@ namespace GUI
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(338, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 24);
+            this.label2.Size = new System.Drawing.Size(107, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "Részleg:";
             // 
@@ -80,7 +81,7 @@ namespace GUI
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(338, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 24);
+            this.label3.Size = new System.Drawing.Size(71, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nem:";
             // 
@@ -89,7 +90,7 @@ namespace GUI
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(338, 187);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 24);
+            this.label4.Size = new System.Drawing.Size(154, 29);
             this.label4.TabIndex = 2;
             this.label4.Text = "Belépés éve:";
             // 
@@ -98,7 +99,7 @@ namespace GUI
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(338, 238);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 24);
+            this.label5.Size = new System.Drawing.Size(97, 29);
             this.label5.TabIndex = 2;
             this.label5.Text = "Fizetés:";
             // 
@@ -106,36 +107,56 @@ namespace GUI
             // 
             this.textBox_Nev.Location = new System.Drawing.Point(509, 34);
             this.textBox_Nev.Name = "textBox_Nev";
-            this.textBox_Nev.Size = new System.Drawing.Size(252, 29);
+            this.textBox_Nev.Size = new System.Drawing.Size(252, 34);
             this.textBox_Nev.TabIndex = 3;
             // 
             // textBox_Reszleg
             // 
             this.textBox_Reszleg.Location = new System.Drawing.Point(509, 85);
             this.textBox_Reszleg.Name = "textBox_Reszleg";
-            this.textBox_Reszleg.Size = new System.Drawing.Size(252, 29);
+            this.textBox_Reszleg.Size = new System.Drawing.Size(252, 34);
             this.textBox_Reszleg.TabIndex = 3;
             // 
             // textBox_Nem
             // 
             this.textBox_Nem.Location = new System.Drawing.Point(509, 131);
             this.textBox_Nem.Name = "textBox_Nem";
-            this.textBox_Nem.Size = new System.Drawing.Size(252, 29);
+            this.textBox_Nem.Size = new System.Drawing.Size(252, 34);
             this.textBox_Nem.TabIndex = 3;
             // 
             // numericUpDown_BelepesEve
             // 
             this.numericUpDown_BelepesEve.Location = new System.Drawing.Point(509, 185);
+            this.numericUpDown_BelepesEve.Maximum = new decimal(new int[] {
+            2990,
+            0,
+            0,
+            0});
+            this.numericUpDown_BelepesEve.Minimum = new decimal(new int[] {
+            1990,
+            0,
+            0,
+            0});
             this.numericUpDown_BelepesEve.Name = "numericUpDown_BelepesEve";
-            this.numericUpDown_BelepesEve.Size = new System.Drawing.Size(120, 29);
+            this.numericUpDown_BelepesEve.Size = new System.Drawing.Size(120, 34);
             this.numericUpDown_BelepesEve.TabIndex = 4;
             this.numericUpDown_BelepesEve.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_BelepesEve.Value = new decimal(new int[] {
+            1990,
+            0,
+            0,
+            0});
             // 
             // numericUpDown_Ber
             // 
             this.numericUpDown_Ber.Location = new System.Drawing.Point(509, 233);
+            this.numericUpDown_Ber.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.numericUpDown_Ber.Name = "numericUpDown_Ber";
-            this.numericUpDown_Ber.Size = new System.Drawing.Size(252, 29);
+            this.numericUpDown_Ber.Size = new System.Drawing.Size(252, 34);
             this.numericUpDown_Ber.TabIndex = 4;
             this.numericUpDown_Ber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDown_Ber.ThousandsSeparator = true;
@@ -148,10 +169,11 @@ namespace GUI
             this.button_Insert.TabIndex = 5;
             this.button_Insert.Text = "Rögzítés";
             this.button_Insert.UseVisualStyleBackColor = true;
+            this.button_Insert.Click += new System.EventHandler(this.button_Insert_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 586);
             this.Controls.Add(this.button_Insert);
@@ -167,7 +189,7 @@ namespace GUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox_dolgozok);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

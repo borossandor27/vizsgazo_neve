@@ -67,5 +67,19 @@ namespace GUI
                 connection.Open();
             }
         }
+
+        internal void insertDolgozo(string nev, string nem, string reszleg, int belepes, int ber)
+        {
+            SqlCommand.CommandText = "INSERT INTO `dolgozok` (`nev`, `neme`, `reszleg`, `belepesev`, `ber`) VALUES ('" + nev + "', '" + nem + "', '" + reszleg + "', " + belepes + ", " + ber + ")";
+            kapcsolatNyit();
+            if (SqlCommand.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Sikeres beszúrás!");
+            }
+            else
+            {
+                MessageBox.Show("Sikertelen beszúrás!");
+            }
+        }
     }
 }
